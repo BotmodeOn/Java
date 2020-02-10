@@ -1,0 +1,24 @@
+package myArray;
+
+public class MyArray {
+
+	public static void main(String[] args) {
+		/*Написать свой вариант метода Arrays.toString() для int[].*/
+		int[] a = { 1,42, 63, 24, 34, 64, 8 };
+		System.out.println(convArray(a));
+
+	}
+
+	static String convArray(int[] a) {
+		String st = "[";
+		for (int i = 0; i < a.length; i++) {
+			if (i == a.length - 1) {
+				st = st + a[i];
+			} else {
+				st = st + a[i] + ", ";
+			}
+		}
+		return st + "]";
+	}
+
+}

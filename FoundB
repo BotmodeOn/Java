@@ -1,0 +1,23 @@
+package foundb;
+import java.util.*;
+public class Fuondb {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Введите текст :");
+		String text =sc.nextLine();
+		char[] x = text.toCharArray();
+		char a = 'b';
+		int count = 0;
+		for (int b:x) {
+			if(a==b) {
+				count++;
+			}
+		}System.out.println(count);
+		
+				
+				
+
+	}
+
+}

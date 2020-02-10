@@ -1,0 +1,14 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	/*Реализуйте процесс многопоточного поиска файла в файловой системе. Т.е. вы вводите название файла и в какой
+части файловой системы его искать. Программа должна вывести на экран все адреса в файловой системе файлов с таким названием.*/
+
+        String folder = "D:\\";
+        String file = "2015.rtf";
+        int threads = 4;
+        FileSearch.threads(folder, file, threads);
+    }
+}

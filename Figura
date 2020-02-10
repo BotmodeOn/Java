@@ -1,0 +1,25 @@
+package figura1;
+import java.util.Scanner;
+public class figura1 {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Введите высоту");
+		int n = sc.nextInt();
+		int b = 1;
+
+		for (int i = 1; i <= n * 2;) {
+
+			if (b <= i && i <= n * 2 - b) {
+
+				System.out.print("*");
+				b += 1;
+			} else {
+
+				System.out.println();
+				i += 1;
+				b = 1;
+			}
+		}
+		}
+}

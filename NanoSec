@@ -1,0 +1,31 @@
+package nanosec;
+import java.util.Calendar;
+import java.util.Date;
+
+public class NanoSec {
+
+	public static void main(String[] args) {
+		/*Написать программу которая вернет количество миллисекунд
+		прошедших от такого же числа, но в прошлом месяце до сегодняшней
+		даты. Например если сегодня 3 августа, то узнать сколько миллисекунд
+		прошло с 3 июля*/
+		Date date = new Date();
+		Calendar cl = Calendar.getInstance();
+		cl.getTime();
+		
+		int year = cl.get(Calendar.YEAR);
+		int month = cl.get(Calendar.MONTH);
+		int day = cl.get(Calendar.DAY_OF_MONTH);
+		
+		Calendar cl2 = Calendar.getInstance();
+		cl2.set(year,month - 1,day);
+		
+		long t1 = date.getTime();
+		long t2 = cl2.getTimeInMillis();
+		
+		long ms = t1-t2;
+		System.out.println(ms);
+
+	}
+
+}

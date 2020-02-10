@@ -1,0 +1,27 @@
+package twoten;
+import java.util.Scanner;
+public class twoten {
+
+	public static void main(String[] args) {
+		/* Ввести с консоли число в бинарном формате. Перевести его в десятичный и вывести на экран (“10” -> 2)*/
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Введите число в инрном формте :");
+		String binar = sc.nextLine();
+		toNumber(binar);
+		sc.close();
+	}
+	static void toNumber(String binar) {
+		char [] a = binar.toCharArray();
+		int t = 0;
+		for (int i = 0;i <a.length;i++) {
+			if (a[i] == '1') {
+				t = (int)(t + (1 * Math.pow(2,a.length - 1 - i))); 
+		} else if (a[i] != '0') {
+			System.out.println("Wrong number");
+			return;
+		}
+	}
+	System.out.println("\"" + binar + "\" -> " + t);
+}
+
+}

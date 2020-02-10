@@ -1,0 +1,32 @@
+package metodsqure;
+import java.util.Scanner;
+public class Metodsqure {
+
+	public static void main(String[] args) {
+		/*Реализуйте метод рисующий на экране прямоугольник из звездочек «*»
+		— его параметрами будут целые числа которые описывают длину и
+		ширину такого прямоугольника.*/
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Input the height of the rectangle:");
+		int h = sc.nextInt();
+		System.out.println("Input the width of the rectangle:");
+		int w = sc.nextInt();
+		fig(h, w);
+		sc.close();
+	}
+
+	static void fig(int a, int b) {
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < b; j++) {
+				if (i == 0 || i == a - 1 || j == 0 || j == b - 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+
+

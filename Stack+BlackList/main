@@ -1,0 +1,53 @@
+package com.company;
+
+// 2) Создайте класс контейнер - стек (класс в который можно добавлять и
+// удалять объекты других классов, только в вершину стека) в который
+// можно сохранять объекты произвольного типа. Должен быть метод
+// добавления элемента в стек,получение с удалением элемента из стека, и
+// просто получение элемента из вершины из стека. Должна быть
+// реализована работа с «черным списком» классов (смотри ниже). Если
+// объект который добавляется в стек принадлежит классу из черного
+// списка, то добавление такого объекта запрещено
+// 3) Для описанного выше стека создайте класс «Черный список» в котором
+// будут описаны классы объектов которые нельзя добавлять в стек.
+// Должна быть возможность добавления классов в черный список, проверка
+// объекта — на то что класс к которому он принадлежит принадлежит или
+// не принадлежит к классам в черном списке.
+
+public class Main {
+
+    public static void main(String[] args) {
+        BlackList blackList = new BlackList();
+        blackList.addToList(A.class);
+        blackList.addToList(Class.class);
+        blackList.addToList(Byte.class);
+        blackList.addToList(Integer.class);
+        System.out.println(blackList);
+
+        Stack stack = new Stack(blackList);
+
+        A a = new A(1);
+        B b = new B(2);
+        Boolean boo = false;
+        Byte bt = 10;
+        Integer i = 3;
+        Long lon = 5l;
+        Character c = 'z';
+        String s = "Hello";
+
+        stack.addObject(a);
+        stack.addObject(a.getClass());
+        stack.addObject(b);
+        stack.addObject(boo);
+        stack.addObject(bt);
+        stack.addObject(i);
+        stack.addObject(lon);
+        stack.addObject(c);
+        stack.addObject(s);
+        System.out.println(stack.toString());
+
+        System.out.println(stack.getFromStack());
+        System.out.println(stack.getFromStackAndDelete());
+        System.out.println(stack);
+    }
+}

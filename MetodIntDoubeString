@@ -1,0 +1,20 @@
+package metodintsting;
+
+public class Metoduntstring {
+
+	public static void main(String[] args) {
+		/* Реализуйте метод параметрами которого являются - целое число,
+		вещественное число и строка. Возвращает он конкатенацию строки с
+		суммой вещественного и целого числа.*/
+		int a = 4;
+		double b = 5.2;
+		String c = "dc";
+		sum(a,b,c);
+		
+
+	}
+static void sum(int a,double b,String c) {
+	c+= a + b;
+	System.out.print(c);
+  }
+}

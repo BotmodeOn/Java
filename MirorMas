@@ -1,0 +1,33 @@
+package mirormas;
+import java.io.*;
+import java.util.*;
+
+public class Mirormas {
+
+	public static void main(String[] args) throws IOException {
+		int N = 10;
+		int[] mass = new int[N];
+		int i = 0;
+		BufferedReader d = new BufferedReader(new InputStreamReader(System.in));
+		for (i = 0; i < N; i++) {
+			String s = d.readLine();
+			mass[i] = Integer.parseInt(s);// заполнение массива
+		}
+
+		for (i = 0; i < (N / 2); i++) {// наприимер a=3; b=4
+			mass[i] = mass[i] + mass[(N - 1) - i];// a=a+b; (a=7)
+			mass[(N - 1) - i] = mass[i] - mass[(N - 1) - i];// b=a-b; (b=3)
+			mass[i] = mass[i] - mass[(N - 1) - i];// a=a-b; (a=4)
+		}
+		String s1 = Arrays.toString(mass);
+		System.out.println(s1);
+		BufferedReader m = new BufferedReader(new InputStreamReader(System.in));
+		String s2 = m.readLine();//     ввод числа
+		int g = Integer.parseInt(s2);// определения числа по индексу в массиве
+		System.out.println(mass[g]);//  вывод числа с массива по индексу
+
+	}
+
+
+
+}		

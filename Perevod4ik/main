@@ -1,0 +1,18 @@
+package com.company;
+import java.io.IOException;
+
+public class Main {
+
+
+
+        public static void main(String[] args) {
+
+            Translation translator = new Translation();
+            translator.loadDictionaryFromFile("Dictionary.txt");
+            //translator.InputNewWordInTheDictionary("Dictionary.txt");
+            translator.loadTextFromFile("English.in.txt");
+            translator.Translation();
+            translator.uploadTranslationInFile("Ukrainian.out.txt");
+        }
+
+    }

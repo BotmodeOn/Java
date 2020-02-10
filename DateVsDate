@@ -1,0 +1,40 @@
+package datevsdate;
+import java.text.*;
+import java.util.*;
+public class DateVsDate {
+
+	public static void main(String[] args) throws ParseException {
+		/*Ввести с консоли дату. Сравнить ее с текущей датой в системе. Вывести
+отличающиеся части (год, месяц) на экран.*/
+		Scanner scn =new Scanner(System.in);
+		SimpleDateFormat dat1 = new SimpleDateFormat("dd/MM/yyyy");
+		System.out.println("Введите дату в формате дд/мм/гггг:");
+		String sdf =scn.nextLine();
+		Date dt= dat1.parse(sdf);
+		Calendar c1 = Calendar.getInstance();
+		c1.setTime(dt);
+		Calendar c2 = Calendar.getInstance();
+		c2.setTime(new Date());
+		
+		scn.close();
+		System.out.println(dt);
+	if (!c1.equals(c2)) {
+		int m1 = c2.get(Calendar.YEAR);
+		int m2 = c1.get(Calendar.YEAR);
+		int m3 = c2.get(Calendar.DAY_OF_MONTH);
+		int m4 = c1.get(Calendar.DAY_OF_MONTH);
+		int m5 = c2.get(Calendar.MONTH);
+		int m6 = c1.get(Calendar.MONTH);
+		
+		if((m1!=m2) ^ (m3!= m4) ^ (m5!=m6) ^ (m1==m2) ^ (m3== m4) ^ (m5==m6)) {
+			int b = m1-m2;
+			int c = m3-m4;
+			int a = m5-m6;
+		
+		System.out.print("Разница между датами :"+ b +" year(s) " + a +" month(s) "  + c +" day(s) " );
+		}
+	}	
+
+	}
+
+}

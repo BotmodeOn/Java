@@ -1,0 +1,69 @@
+package rollmas;
+import java.util.*;
+
+public class Rollmas {
+
+	public static void main(String[] args) {
+		 int[][] a = new int[][]{{1, 2, 3, 4, 5, 6}, {1, 2, 3, 4, 5, 6}, {1, 2, 3, 4, 5, 6},
+             {1, 2, 3, 4, 5, 6}, {1, 2, 3, 4, 5, 6}, {1, 2, 3, 4, 5, 6}};
+		 printArray(a);
+	        System.out.println(" ");
+	        printArray(turn90(a));
+	        System.out.println(" ");
+	        printArray(turn180(a));
+	        System.out.println(" ");
+	        printArray(turn270(a));
+	        System.out.println(" ");
+	    }
+
+	    public static void printArray(int[][] a) {
+	        for (int[] row : a) {
+	            System.out.println(Arrays.toString(row));
+	        }
+	    }
+
+	    public static int[][] turn90(int[][] a) {
+	        for (int i = 0; i < a.length; i++) {
+	            for (int j = i; j < a.length; j++) {
+	                int b = a[i][j];
+	                a[i][j] = a[j][i];
+	                a[j][i] = b;
+	            }
+	        }
+	        return a;
+	    }
+
+	    public static int[][] turn180(int[][] a) {
+	        for (int i = 0; i < a.length; i++) {
+	            for (int j = 0; j < a.length - 1 - j; j++) {
+	                int b = a[i][j];
+	                a[i][j] = a[i][a.length - 1 - j];
+	                a[i][a.length - 1 - j] = b;
+
+	            }
+	        }
+	        for (int i = 0; i < a.length - 1 - i; i++) {
+	            for (int j = 0; j < a.length; j++) {
+	                int b = a[i][j];
+	                a[i][j] = a[a.length - 1 - i][j];
+	                a[a.length - 1 - i][j] = b;
+
+	            }
+	        }
+	        return a;
+	    }
+
+	    public static int[][] turn270(int[][] a) {
+	        for (int i = 0; i < a.length; i++) {
+	            for (int j = i; j < a.length; j++) {
+	                int b = a[i][j];
+	                a[i][j] = a[j][i];
+	                a[j][i] = b;
+	            }
+	        }
+	        return a;
+	    }
+	
+		
+		
+	}

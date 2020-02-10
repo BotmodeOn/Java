@@ -1,0 +1,52 @@
+package textredactor;
+import java.util.Scanner;
+import java.io.*;
+
+public class TextRedactor {
+
+	public static void main(String[] args) {
+		/*Создайте консольный «текстовый редактор» с возможностью
+сохранения набранного текста в файл.*/
+		Scanner scan = new Scanner(System.in);
+		String command;
+		in();
+		for (boolean IfReading = true; ;) {
+			command = scan.nextLine();
+			if (command.equals("save")) {
+				IfReading = false;
+			} else {
+				out(command);
+			}
+		
+			scan.close();
+		}
+	}	
+Создайте консольный «текстовый редактор» с возможностью
+сохранения набранного текста в файл.*/
+	
+	static void in() {
+		try (BufferedReader br = new BufferedReader(new FileReader(
+				"textedit.txt"))) {
+			
+			for (String q = ""; (q = br.readLine()) != null;) {
+				System.out.println(q);
+			}
+
+		} catch (IOException e) {
+			System.out.println("ERROR");
+		}
+	}
+
+	static void out(String s) {
+		try (PrintWriter pw = new PrintWriter("textedit.txt")) {
+			String q = "";
+			pw.print(s);
+			pw.close();
+
+		} catch (IOException e) {
+			System.out.println("ERROR");
+		}
+		
+		
+	}
+}

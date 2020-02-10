@@ -1,0 +1,21 @@
+package randomnum;
+import java.util.Random;
+import java.util.Arrays;
+public class Randomnum {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int a [] = new int [15];
+		for (int i = 0; i < a.length; i++) {
+			a[i] = random.nextInt(10);
+		}
+		int b [] = Arrays.copyOf(a,30);
+		for (int c = b.length/2; c <b.length;c++) {
+			b[c]=a[c-15]*2;
+		}
+		System.out.println("Было :"+Arrays.toString(a));
+		System.out.println("Стало :"+Arrays.toString(b));
+		
+	}
+
+}

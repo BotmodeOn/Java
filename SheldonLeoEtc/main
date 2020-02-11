@@ -1,0 +1,10 @@
+package com.company;
+import javax.swing.JOptionPane;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int a=Integer.parseInt(JOptionPane.showInputDialog("How many bottles of Colla would you like to give?"));
+        System.out.println(WorkClas.createALineAfterGivingAColla(WorkClas.createList(), a));
+    }
+}

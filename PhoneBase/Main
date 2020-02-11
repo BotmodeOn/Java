@@ -1,0 +1,23 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	/*Опишите класс Phone (одним из свойств должен быть его номер). Также опишите
+класс Network (сеть мобильного оператора). Телефон должен иметь метод
+регистрации в сети мобильного оператора. Также у телефона должен быть метод call
+(номер другого телефона), который переберет все телефоны, зарегистрированные в
+сети. Если такой номер найден, то осуществить вызов, если нет - вывести сообщение
+о неправильности набранного номера.*/
+        Phone a = new Phone(636880445, "Lenovo");
+        Phone b = new Phone(937056494, "Nokia");
+        Phone c = new Phone(987238189,"Samsung");
+        Network life = new Network("life");
+        a.registerInNetwork(life);
+        a.call(937056494);
+        b.registerInNetwork(life);
+        a.call(937056494);
+        c.registerInNetwork(life);
+        c.call(636880445);
+    }
+}

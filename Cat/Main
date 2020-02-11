@@ -1,0 +1,20 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	/*Описать класс «Cat» (в качестве образца можно взять домашнего питомца).
+Наделить его свойствами и методами. Создать несколько экземпляров объектов
+этого класса. Использовать эти объектыОписать класс «Cat» (в качестве образца можно взять домашнего питомца).*/
+ Cat cat1 = new Cat("Archer","good",4,12,"white",1.4);
+ Cat cat2 =new Cat("Arav","bad",4,2,"Black",1.7);
+ System.out.println("My cats");
+ cat1.jump(2.2);
+ System.out.println(cat1);
+ cat2.jump(3.1);
+
+ System.out.println(cat2);
+
+
+    }
+}

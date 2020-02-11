@@ -1,0 +1,27 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	 int beerNum = 99;
+	 String word = "botels";
+
+	 while (beerNum > 0) {
+
+	     if (beerNum == 1){
+	         word = "botel";
+         }
+	     System.out.println(beerNum + " " + word + " " + " beer on wall");
+	     System.out.println(beerNum + " " + word + " "+ " beer");
+	     System.out.println("Grab one");
+	     System.out.println("let go in a circle");
+	     beerNum = beerNum - 1;
+
+	     if (beerNum > 0){
+	         System.out.println(beerNum + " " + word + " beer on wall");
+         }else {
+	         System.out.println("No botel on wall");
+         }
+     }
+    }
+}

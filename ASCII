@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+/**
+ * На основе строки сгенерируйте массив целых чисел, где каждое число должно
+ * быть ASCII кодом соответствующей буквы.
+ *
+ */
+public class Main {
+
+    public static void main(String[] args) {
+        String text = "The string a for ASCII***";
+        char[] chars = text.toCharArray();
+        StringBuilder stringB = new StringBuilder();
+        for (int i = 0; i < chars.length; i++) {
+            if (Character.isLetter(chars[i])) {
+                stringB.append(chars[i]);
+            }
+        }
+        String[] array = stringB.toString().split("");
+        Set<String> arraSet = new HashSet<>(Arrays.asList(array));
+        Map<String, Integer> map = arraSet.stream().collect(Collectors.toMap(Function.identity(), String::hashCode));
+        System.out.println(map);
+
+    }
+
+}

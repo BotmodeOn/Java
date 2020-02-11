@@ -1,0 +1,40 @@
+package com.company;
+import java.io.File;
+public class Main {
+    public static void main(String[] args) {
+        Human humanOne = new Human("Ivan", "Ivanov", "male", 17);
+        Human humanTwo = new Human("Petr", "Petrov", "male", 19);
+        Human humanThree = new Human("Sidor", "Sidorov", "male", 45);
+        Human humanFour = new Human("Natalia", "Petrova", "female", 16);
+
+        Student studentOne = new Student(humanOne, "FIOT", "IR-05");
+        Student studentTwo = new Student(humanTwo, "FEA", "FE-15");
+        Student studentThree = new Student(humanThree, "FEA", "FE-05");
+        Student studentFour = new Student(humanFour, "FAKS", "FA-05");
+        Student studentFive = new Student("Oleg", "Sherbak", "male", 16, "FAKS", "FA-05-05");
+        Student studentSix = new Student("Irina", "Somova", "female", 20, "FAKS", "FA-05-05");
+        Student studentSeven = new Student("Vasiliy", "Vasiliev", "male", 21, "FIOT", "IR-05");
+        Student studentEight = new Student("Larisa", "Kotenko", "female", 22, "FIOT", "IR-05");
+
+        Group group = new Group();
+        group.setGroupName("GROUP");
+        group.addStudent(studentOne);
+        group.addStudent(studentTwo);
+        group.addStudent(studentThree);
+        group.addStudent(studentFour);
+        group.addStudent(studentFive);
+        group.addStudent(studentSix);
+        group.addStudent(studentSeven);
+        group.addStudent(studentEight);
+        group.printgroup();
+
+        group.deleteStudent(1);
+        group.deleteStudent(3);
+        group.printgroup();
+
+        File fileGroup = group.saveToFile("group.txt");
+        group = null;
+        Group groupFromFile = Group.restoreFromFile(fileGroup.getAbsolutePath());
+        groupFromFile.printgroup();
+    }
+}

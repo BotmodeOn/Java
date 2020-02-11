@@ -1,0 +1,15 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	/*Реализуйте программу многопоточного копирования файла
+	 блоками, с выводом прогресса на экран.*/
+        String folder = "D:\\000\\My_JAVA\\Books\\";
+        String fileSource = "Герберт Шилд - Java. Полное руководство. 8-е издание.pdf";
+        String fileRecipient = "Герберт Шилд - Java. Полное руководство. 8-е издание_Copy.pdf";
+        Myfile myFile = new Myfile(folder + fileSource, folder + fileRecipient, 1024000, 0, 0);
+        myFile.copyFile();
+        System.out.println("Mine stop.");
+    }
+}
